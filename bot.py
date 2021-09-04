@@ -71,11 +71,7 @@ def inlinequery(update,context):
                      InlineQueryResultArticle(id=uuid4(),title="unshort",input_message_content=InputTextMessageContent(unshortlink), description="Click to unshort the link")]
 	update.inline_query.answer(results)
 		
-def donate(update,context):
-    update.message.reply_text("You can support me by donating any amount you wish by using the following *Payment Options* \n\n1\. [Paypal](https://paypal.me/yamit11) \n2\. UPI : `amity11@kotak` \n3\. [Debit/Credit cards/UPI](https://rzp.io/l/amity11)\n\n",parse_mode=telegram.ParseMode.MARKDOWN_V2)
-	
 
-	
 
 
 def main():
