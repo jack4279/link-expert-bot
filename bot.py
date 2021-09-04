@@ -80,7 +80,7 @@ def main():
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('start',start))
     dp.add_handler(CommandHandler('help',help))
-    dp.add_handler(CommandHandler('donate',donate))
+
     dp.add_handler(MessageHandler(Filters.text,convert))
     dp.add_handler(CallbackQueryHandler(button))
     dp.add_handler(InlineQueryHandler(inlinequery))
