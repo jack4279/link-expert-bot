@@ -53,9 +53,11 @@ def button(update,context):
         uri=unshortener.unshorten(link)
         query.edit_message_text(text="Unshorted url 👇🏼 : \n"+str(uri))
     if a=="short":
-        response=s.bitly.short(link)
-        query.edit_message_text("Shorted url 👇🏼:\n"+str(response))
+        unshortener=UnshortenIt()
 
+        uri=unshortener.unshorten(link)
+
+        query.edit_message_text(text="Unshorted url 👇🏼 : \n"+str(uri))
 
 def inlinequery(update,context):
 	query = update.inline_query.query
