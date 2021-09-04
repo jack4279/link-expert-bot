@@ -34,7 +34,7 @@ def help(update,context):
 def convert(update,context):
     global link
     remove = update.message.text
-    URLless_string = re.sub(r'http\S+', '', stringliteral)
+    URLless_string = re.sub(r'http\S+', '', remove)
     link= (re.search("(?P<url>https?://[^\s]+)", remove).group("url"))
     unshortener=UnshortenIt()
     uri=unshortener.unshorten(link)
