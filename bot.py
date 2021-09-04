@@ -33,7 +33,8 @@ def help(update,context):
 @run_async
 def convert(update,context):
     global link
-    link=update.message.text
+    remove = update.message.text
+    link= (re.search("(?P<url>https?://[^\s]+)", remove).group("url"))
     unshortener=UnshortenIt()
     uri=unshortener.unshorten(link)
     pattern1="https://*"
