@@ -34,12 +34,14 @@ def help(update,context):
 def convert(update,context):
     global link
     link=update.message.text
+    unshortener=UnshortenIt()
+        uri=unshortener.unshorten(link)
     pattern1="https://*"
     pattern2="http://*"
     if(re.search(pattern1,link)) or (re.search(pattern2,link)):
         keyboard = [[InlineKeyboardButton("Unshort", callback_data='unshort')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        update.message.reply_text(unshortener.unshorten(link), reply_markup=reply_markup)
+        update.message.reply_text(uri, reply_markup=reply_markup)
     else:
         update.message.reply_text("<i>⚠️ Url must start with http:// or https:// and it should not have spaces in it.</i>",parse_mode=telegram.ParseMode.HTML)
 
