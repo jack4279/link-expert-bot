@@ -35,7 +35,7 @@ def convert(update,context):
     global link
     link=update.message.text
     unshortener=UnshortenIt()
-        uri=unshortener.unshorten(link)
+    uri=unshortener.unshorten(link)
     pattern1="https://*"
     pattern2="http://*"
     if(re.search(pattern1,link)) or (re.search(pattern2,link)):
