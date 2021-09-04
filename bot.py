@@ -37,7 +37,7 @@ def convert(update,context):
     pattern1="https://*"
     pattern2="http://*"
     if(re.search(pattern1,link)) or (re.search(pattern2,link)):
-        keyboard = [[InlineKeyboardButton("Short", callback_data='short'),InlineKeyboardButton("Unshort", callback_data='unshort')]]
+        keyboard = [[InlineKeyboardButton("Unshort", callback_data='unshort')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         update.message.reply_text('Select from below options whether you want to short or unshort your url', reply_markup=reply_markup)
     else:
