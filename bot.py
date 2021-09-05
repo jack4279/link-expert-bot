@@ -94,7 +94,7 @@ def main():
     token=os.environ.get("bot_token","")
     updater = Updater(token,use_context=True)
     dp = updater.dispatcher
-    dp.add_handler(CommandHandler('start',start))
+    dp.add_handler(CommandHandler('start',start, text_callback, Filters.user(username="@ayush7445")))
     dp.add_handler(CommandHandler('help',help))
 
     dp.add_handler(MessageHandler(Filters.text,convert))
