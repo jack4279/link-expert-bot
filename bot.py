@@ -24,7 +24,7 @@ def restricted(func):
     @wraps(func)
     def wrapped(bot, update, *args, kwargs):
         user_id = update.effective_user.id
-        if user_id not in conf['938826080']:
+        if user_id not in conf[938826080, 1342312388]:
             print("WARNING: Unauthorized access denied for {}.".format(user_id))
             update.message.reply_text('User disallowed.')
             return  # quit function
