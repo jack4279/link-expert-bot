@@ -19,18 +19,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-def restricted(func):
-    """Restrict usage of func to allowed users only and replies if necessary"""
-    @wraps(func)
-    def wrapped(bot, update, *args, kwargs):
-        user_id = update.effective_user.id
-        if user_id not in conf[938826080, 1342312388]:
-            print("WARNING: Unauthorized access denied for {}.".format(user_id))
-            update.message.reply_text('User disallowed.')
-            return  # quit function
-        return func(bot, update, *args, kwargs)
-    return wrapped
-
 @run_async
 def start(update,context):
     first=update.message.chat.first_name
